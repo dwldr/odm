@@ -1,0 +1,32 @@
+$color-body-bg: #F9F8F8;
+$color-border: #D4D4D4;
+$color-red: #FF5252;
+$color-green: #4CAF50;
+$color-text: #212121;
+$color-text-light: #727272;
+
+$fa-font-path: "../fonts/fontawesome";
+
+$navbar-height: 7rem;
+$navbar-shadow: 0px 1px 0px 0px rgba(0,0,0,0.25);
+
+$page-margin: 4%;
+
+@import '../vendor/components-font-awesome/scss/font-awesome';
+
+$susy: (
+  global-box-sizing: border-box,
+  use-custom: (rem: true)
+);
+
+@import '../vendor/susy/sass/_susy.scss';
+
+@import 'bootstrap';
+@import 'fonts';
+@import 'base';
+@import 'nprogress';
+@import 'navbar';
+@import 'nav';
+@import 'content';
+@import 'sidenav';
+@import 'search';

@@ -1,0 +1,129 @@
+$search-width: 20rem;
+.search-form-group {
+  position: relative; 
+  margin-bottom: 4.5rem; 
+}
+input {
+  font-size: 1.4rem;
+  padding: 1rem 1rem 0.5rem 2rem;
+  background: rgba(0, 0, 0, 0) url("../images/svg/glass.svg") no-repeat scroll 0 17.5px / 20px;
+  background-size: 20px 20px;
+  display:block;
+  width: $search-width;
+  border:none;
+  border-bottom: 1px solid $color-border;
+  height: 5rem;
+  padding-left: 3rem;
+}
+input:focus {
+  outline: none;
+  background-image: url("../images/svg/glass-focus.svg");
+}
+label {
+  color: #999; 
+  font-size: 1.4rem;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 0.5rem;
+  top: 1rem;
+  transition: 200ms ease all; 
+}
+.bar {
+  position: relative;
+  display: block;
+  width: $search-width;
+}
+#nav-sections-search-container .bar {
+  width: 100%;
+}
+.bar:before, .bar:after {
+  content:'';
+  height: 0.2rem; 
+  width: 0;
+  bottom: 0.1rem; 
+  position: absolute;
+  background: $color-green; 
+  transition: 200ms ease all; 
+}
+#navbar-search-container .bar:before, #navbar-search-container .bar:after {
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%; 
+}
+.twitter-typeahead.focused ~ .bar:before, .twitter-typeahead.focused ~ .bar:after {
+  width: 50%;
+}
+.highlight {
+  position: absolute;
+  height: 60%; 
+  width: $search-width; 
+  top: 25%; 
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+.twitter-typeahead.focused ~ .highlight {
+  animation: inputHighlighter 300ms ease;
+}
+.tt-query {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.tt-hint {
+  color: #999
+}
+.tt-menu {
+  min-width: 20rem;
+  margin-top: 0.4rem;
+  padding: 1rem 0;
+  background-color: rgba(255,255,255,0.98);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  font-size: 1.4rem;
+}
+.tt-suggestion {
+  padding: 0.3rem 2rem;
+  line-height: 2.4rem;
+  &:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+}
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: $color-green;
+}
+.tt-suggestion p {
+  margin: 0;
+}
+.twitter-typeahead {
+  height: 5rem;
+  display: block !important;
+}
+@-webkit-keyframes inputHighlighter {
+  from  { background: $color-border; }
+  to    { width: 0; background: transparent; }
+}
+@-moz-keyframes inputHighlighter {
+  from  { background: $color-border; }
+  to    { width: 0; background: transparent; }
+}
+@keyframes inputHighlighter {
+  from  { background: $color-border; }
+  to    { width: 0; background: transparent; }
+}
+@media (max-width: 1140px) {
+  .tt-menu, .highlight {
+    width: 100%;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 16px;
+  }
+}

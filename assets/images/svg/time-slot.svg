@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>time-slot</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="02/Driving-Is-a-Privilege" sketch:type="MSArtboardGroup" transform="translate(-308.000000, -275.000000)" fill="#727272">
+            <g id="Main-Content" sketch:type="MSLayerGroup" transform="translate(308.000000, 179.000000)">
+                <g id="Action-+-Info-Icons" transform="translate(0.000000, 90.000000)" sketch:type="MSShapeGroup">
+                    <g id="Timer" transform="translate(0.000000, 4.000000)">
+                        <g id="time-slot" transform="translate(0.000000, 2.000000)">
+                            <path d="M7,0.28 C3.2886,0.28 0.28,3.2886 0.28,7 C0.28,10.7114 3.2886,13.72 7,13.72 C10.7107,13.72 13.72,10.7114 13.72,6.9993 C13.72,3.2886 10.7107,0.28 7,0.28 L7,0.28 Z M7,12.3193 C4.0621,12.3193 1.68,9.9379 1.68,6.9993 C1.68,4.0614 4.0614,1.6793 7,1.6793 L7,1.6793 L7,7 L11.7544,4.6228 C12.1135,5.3389 12.32,6.1439 12.32,7 C12.32,9.9379 9.9379,12.3193 7,12.3193 L7,12.3193 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

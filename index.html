@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ODM" ng-controller="mainController" class="ng-cloak">
+  <head>
+    <meta charset="utf-8">
+    <title ng-bind="'Oregon Driver Manual | ' + pageTitle">Oregon Driver Manual</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link href="assets/stylesheets/style.css" rel="stylesheet" media="all">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+  </head>
+  <body>
+    <header role="banner">
+      <div id="navbar-site-title">
+        Oregon Driver Manual
+      </div>
+      <div id="navbar-menu-toggle-wrapper">
+        <button id="navbar-menu-toggle" data-toggle="collapse" data-target="#nav-sections" aria-expanded="false" aria-controls="nav-sections">
+          <span>toggle menu</span>
+        </button>
+      </div>
+      <div id="navbar-search-container">
+        <div class="search-form-group">      
+          <input type="text" class="typeahead form-control">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+      <div id="navbar-text-size" class="text-size dropdown">
+        <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <small>A</small>A
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#" class="text-size-larger"><span class="fa fa-plus fa-fw"></span> Increase text size</a></li>
+          <li><a href="#" class="text-size-smaller"><span class="fa fa-minus fa-fw"></span> Decrease text size</a></li>
+        </ul>
+      </div>
+    </header>
+    <nav id="nav-sections" class="collapse">
+      <div id="nav-sections-search-container">
+        <div class="search-form-group">      
+          <input type="text" class="typeahead form-control">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+      <div id="nav-sections-text-size" class="text-size dropdown">
+        <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <small>A</small>A
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#" class="text-size-larger"><span class="fa fa-plus fa-fw"></span> Increase text size</a></li>
+          <li><a href="#" class="text-size-smaller"><span class="fa fa-minus fa-fw"></span> Decrease text size</a></li>
+        </ul>
+      </div>
+    <div class="nav-sections-list-wrapper">
+      <h5 class="nav-sections-header">Sections</h5>
+      <ul id="nav-sections-ul">
+        <li ng-repeat="s in secPages" ng-class="{ active: isActiveSection('/0'+'{{$index + 1}}') }"><a href="#{{s.pages[0].route}}">{{s.section_name}}</a></li>
+      </ul>
+    </div>
+    </nav>
+    <div id="content-wrapper">
+      <section id="sidenav" class="ng-cloak">
+        <div class="section-num-wrapper">
+          <small class="section-num-label">Section</small>
+          <h3 class="section-num">{{ secNum }}</h3>
+        </div>
+        <h4>{{ secTitle }}</h4>
+        <ul ng-repeat="s in secPages" class="page-sections" ng-show="secNum == '{{s.section_num}}'">
+          <li ng-repeat="p in s.pages" ng-class="{ active: isActive('{{p.route}}') }"><a href="#{{p.route}}">{{p.title}}</a></li>
+        </ul>
+      </section>
+      <main class="ng-cloak">
+        <h1>{{ pageTitle }}</h1>
+
+        <div id="section-controls">
+          <span id="reading-time"><span class="icon icon-clock-o"></span> <span class="section-controls-label">{{ readingTime }} minutes reading</span></span>
+          <!-- <a href="#" id="bookmark"><span class="icon icon-bookmark"></span> <span class="section-controls-label">Bookmark</span></a> -->
+          <div id="play-audio">
+            <a href="#"><span class="icon icon-play-circle-o"></span> <span class="section-controls-label">Play audio version</span></a>
+            <!-- <audio src="assets/audio/Jeopardy-theme-song.mp3" preload="none" controls></audio> -->
+          </div>
+        </div>
+
+        <div ng-view id="page-contents"></div>
+
+        <div class="container">
+          <a href="#{{ prevRoute }}" class="col-prev-next page-prev"><span class="fa fa-arrow-circle-o-left"></span> <span class="page-prev-label">Previous</span></a>
+
+          <a href="#{{ nextRoute }}" class="col-prev-next page-next">
+            <div><span class="page-next-label">Next</span> <span class="fa fa-arrow-circle-o-right"></span></div>
+            <div class="page-next-title">{{ pageNextTitle }}</div>
+          </a>
+        </div>
+
+      </main>
+    </div>
+    <div id="overlay"></div>
+    <script src="assets/javascript/bundle.js"></script>
+  </body>
+</html>

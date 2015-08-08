@@ -1,0 +1,75 @@
+#sidenav {
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+  padding-top: 1rem;
+  & > h4 {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: $color-red;
+  }
+}
+.section-num-label {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+.section-num {
+  font-size: 4.8rem;
+  font-weight: 400;
+  font-family: Quicksand;
+  color: $color-red;
+}
+.page-sections {
+  margin-top: 4rem;
+  & > li {
+    &::before {
+      @include break;
+      content: "\f1db";
+      font-family: fontawesome;
+      color: #727272;
+      display: inline-block;
+      margin-right: 1rem;
+    }
+    &.active::before {
+      content: "\f111";
+      color: $color-green;
+    }
+    & > a {
+      display: inline-block;
+      font-size: 1.2rem;
+      line-height: 1.9rem;
+      width: calc(100% - 2rem);
+      vertical-align: top;
+      margin-top: 0.1rem;
+      height: 5rem;
+    }
+    &.active > a {
+      color: $color-green;
+    }
+  }
+}
+@media (max-width: 1140px) {
+  .page-sections {
+    display: none;
+  }
+  .section-num-label, .section-num {
+    display: inline-block;
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+  }
+  #sidenav {
+    @include span(12 of 12);
+    border: none;
+  }
+  .section-num-wrapper {
+    @include span(5 of 12);
+    border-top: 1px solid $color-border;
+    padding-top: 1rem;
+  }
+  #sidenav > h4 {
+    @include span(7 of 12 last);
+    border-top: 1px solid $color-border;
+    padding-top: 1rem;
+    text-transform: none;
+  }
+}

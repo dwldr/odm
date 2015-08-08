@@ -1,0 +1,273 @@
+#content-wrapper {
+  @include break;
+  @include container;
+  overflow: visible;
+  margin: 0 $page-margin;
+  padding: 3.2rem 2rem;
+  background-color: #fff;
+  border: 1px solid $color-border;
+  box-shadow: 3px -3px 0 0 #fff,
+              4px -4px 0 0 $color-border,
+              4px -2px 0 0 $color-border,
+              2px -4px 0 0 $color-border,
+              7px -7px 0 0 #fff,
+              8px -8px 0 0 $color-border,
+              8px -6px 0 0 $color-border,
+              6px -8px 0 0 $color-border;
+}
+#sidenav {
+  @include span(2 of 12);
+}
+main {
+  @include span(10 of 12 last);
+  border-top: 1px solid $color-border;
+  padding-top: 3rem;
+}
+h1 {
+  font-size: 3.6rem;
+  font-weight: 400;
+  font-family: NanumMyeongjo;
+  margin-bottom: 1.8rem;
+}
+.container {
+  @include container;
+}
+.col, .col-prev-next {
+  @include span(6 of 12);
+  & + .col, & + .col-prev-next {
+    @include span(6 of 12 last);
+  }
+}
+#section-controls {
+  color: $color-text-light;
+  font-size: 1.2rem;
+  padding-right: 3rem;
+  & .fa {
+    font-size: 2rem;
+  }
+}
+#reading-time {
+  float: left;
+  margin-bottom: 3.8rem;
+}
+#play-audio, #bookmark {
+  float: right;
+  margin-bottom: 3.8rem;
+  text-transform: uppercase;
+}
+#play-audio > a{
+  margin-right: 7.7rem;
+  margin-bottom: 3.8rem;
+  color: $color-green;
+  text-transform: uppercase;
+}
+.section-controls-label {
+  display: inline-block;
+  transform: translate(0.5rem, -30%);
+}
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0) no-repeat scroll 0 0 / contain;
+}
+.icon-clock-o {
+  background-image: url("../images/svg/time-slot.svg");
+}
+.icon-play-circle-o {
+  background-image: url("../images/svg/play-audio.svg");
+}
+.icon-bookmark {
+  background-image: url("../images/svg/bookmark.svg");
+  width: 1rem;
+}
+p {
+  @include break;
+  margin-bottom: 2.25rem;
+  line-height: 2.5rem;
+}
+h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: $color-green;
+  margin-bottom: 1.3rem;
+}
+.container + .container {
+  margin-top: 4.6rem;
+}
+.col > p {
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+#content-wrapper .page-prev {
+  border-top: 3px solid $color-border;
+  padding-top: 1.4rem;
+  color: #b6b6b6;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  & > .fa {
+    font-size: 2rem;
+  }
+}
+.page-prev-label {
+  display: inline-block;
+  height: 2rem;
+  transform: translate(0.5rem, -0.2rem);
+}
+.page-next {
+  border-top: 3px solid $color-green;
+  padding-top: 1.4rem;
+  color: $color-green;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  & > div {
+    float: right;
+    @include break;
+  }
+  & .fa {
+    font-size: 2rem;
+  }
+}
+.page-next-label {
+  display: inline-block;
+  height: 2rem;
+  transform: translate(-0.5rem, -0.2rem);
+}
+.page-next-title {
+  font-size: 1.8rem;
+  text-transform: none;
+}
+#page-contents {
+  @include break;
+  min-height: 18rem;
+  & a {
+    color: $color-green;
+    text-decoration: underline;
+  }
+}
+.fee-table {
+  @include span(8 of 12);
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  & th {
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 400;
+    vertical-align: top;
+    &:first-child {
+      border-top-width: 2px;
+    }
+    &.last {
+      border-bottom-color: transparent;
+    }
+  }
+  & .parens {
+    text-transform: none;
+  }
+  & thead th {
+    padding-bottom: 0.75rem;
+  }
+  & tbody th, & tbody td {
+    padding: 2rem 0;
+    font-size: 1.2rem;
+  }
+  & tbody td {
+    color: $color-text-light;
+  }
+  & tbody th, & tbody th + td, & tbody th + td + td {
+    border-top: 1px solid $color-green;
+  }
+  & tbody tr:last-child th, & tbody tr:last-child td {
+    border-bottom: 1px solid $color-green;
+  }
+}
+.note-block {
+  @include span(4 of 12 last);
+  border: 1px solid $color-green;
+  padding: 1.5rem;
+  color: $color-text-light;
+  & h3 {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: $color-green;
+    margin-bottom: 1rem;
+  }
+  & strong {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: $color-text;
+  }
+}
+.table-note {
+  @include break;
+  color: $color-text-light;
+}
+@media (max-width: 1140px) {
+  main {
+    @include span(12 of 12);
+    border: none;
+    padding-top: 2rem;
+    & h1 {
+      font-size: 2.8rem;
+    }
+  }
+  #section-controls {
+    padding-right: 0;
+  }
+  #reading-time {
+    @include span(12 of 12);
+    margin-bottom: 1rem;
+    & .icon {
+      display: none;
+    }
+  }
+  #play-audio {
+    @include span(12 of 12);
+    font-size: 1.1rem;
+  }
+  /*#bookmark {
+    @include span(4 of 12 last);
+    font-size: 1.1rem;
+  }*/
+  #play-audio, #bookmark {
+    margin-bottom: 1.8rem;
+    & > .section-controls-label {
+      transform: translate(0.5rem, -40%);
+    }
+  }
+  .section-controls-label {
+    transform: translate(0rem, -40%);
+  }
+  #content-wrapper {
+    padding: 2rem 1rem 1rem;
+  }
+  p {
+    margin-bottom: 2rem;
+  }
+  h2 {
+    margin-bottom: 1rem;
+  }
+  .col, .col + .col {
+    @include span(12 of 12);
+  }
+  .container + .container {
+    margin-top: 2rem;
+  }
+  .page-next-title {
+    font-size: 1.4rem;
+  }
+  .fee-table {
+    @include span(12 of 12);
+  }
+  .note-block {
+    @include span(12 of 12);
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 414px) {
+  #content-wrapper {
+    margin: 0 1rem 0 0.2rem;
+  }
+}
